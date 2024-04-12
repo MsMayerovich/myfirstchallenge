@@ -14,9 +14,10 @@
     <header class="header">
         <img class="logo" src="img/Logo.png" alt="logo alura">
     </header>
+    
     <main class="flex principal">
         <section class="flex usuario">
-            <textarea class="text-area" cols="30" rows="10" placeholder="Ingresar el texto aquí"></textarea>
+            <textarea id="textArea" class="text-area" cols="30" rows="10" placeholder="Ingresar el texto aquí"></textarea>
             
             <div class="advertencia">
                 <img class="iconoAlerta" src="img/exclamation-circle.png" alt="signoexclamación">
@@ -24,23 +25,23 @@
             </div>
 
             <div class="botones">
-                <button id="btnencriptar" onclick="btnEncriptar">Encriptar</button>
-                <button id="btndesencriptar">Desencriptar</button>
+                <button id="encriptar" onclick="btnEncriptar()">Encriptar</button>
+                <button id="desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
             </div>
         </section>
 
-        <section class="flex salida noencontrado">
-            <img src="img/anime.jpg" alt="imagenanime" id="anime">
-            <div class="mensaje-no-encontrado">
+        <section class="flex salida noencontrado" id="noEncontrado">
+            <img src="img/anime.jpg" alt="imagenanime" class="anime" id="anime">
+            <div class="mensajeNoEncontrado" id="mensajeNoEncontrado">
                 <h2 class="bold" id="titulo-mensaje">Ningún mensaje fue encontrado.</h2>
-                <p id="parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <p class="parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
         </section>
 
         <section class="flex salida encontrado display-none">
             <div class="flex mensaje-encriptado">
                 <textarea id="mensaje" ></textarea>
-                <button id="copiar">Copiar</button>
+                <button id="btnCopiar" class="btnCopiar" onclick="btnCopiar()">Copiar</button>
             </div>
             
         </section>
