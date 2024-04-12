@@ -26,6 +26,9 @@ const textArea = document.querySelector (".text-area");
 const mensaje = document.querySelector ("#mensaje");
 
 
+// la matriz es igual para ambas funciones
+const matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
+
 function encriptar(stringEncriptada){
     let matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o,","ober"],["u","ufat"]];
     stringEncriptada = stringEncriptada.toLowerCase()
@@ -47,24 +50,31 @@ function btnDesencriptar() {
 }
 
 
-
 function desencriptar(stringDesencriptada){
-    let matrizCodigoInverso =[["enter","e"],["imes","i"],["ai","a"],["ober","o"],["ufat","u"]];
-    stringDesencriptada = stringDesencriptada.toLowerCase()
     
-    for(let i = 0; i <matrizCodigoInverso.length; i++){
-        if(stringDesencriptada.includes(matrizCodigoInverso[i][0])){
-            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigoInverso[i][0],matrizCodigoInverso[i][1])
+    for(let i = 0; i <stringDesencriptada.length; i++){
+        for(let j = 0; j < matrizCodigo.length; j++){
+            const codigo = matrizCodigo[j];
+            if (stringDesencriptada.substring(i).startsWith(codigo[1])) {
+                stringDesencriptada = stringDesencriptada.substring(0, i) + codigo[0] + stringDesencriptada.substring(i + codigo[1].length);
+                break; // Salir del bucle interno una vez que se haya encontrado y reemplazado el código
+            }
 
+    
         }
-
     }
     return stringDesencriptada;
 }
 
-function btnCopiar(){
-    navigator.clipboard.writeText(text-area.textContent.value);
-  }
+//Realizar copia
+const btnCopy = document.querySelector('#btnCopiar');
+
+function btnCopiar() {
+    let txt = mensaje.value
+    navigator.clipboard.writeText(txt)
+}
+
+btnCopy.addEventListener('click', btnCopiar);
 
 
 
