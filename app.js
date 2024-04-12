@@ -30,7 +30,6 @@ const mensaje = document.querySelector ("#mensaje");
 const matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
 
 function encriptar(stringEncriptada){
-    let matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o,","ober"],["u","ufat"]];
     stringEncriptada = stringEncriptada.toLowerCase()
 
     for(let i = 0; i < matrizCodigo.length; i++){
@@ -66,15 +65,11 @@ function desencriptar(stringDesencriptada){
     return stringDesencriptada;
 }
 
-//Realizar copia
-const btnCopy = document.querySelector('#btnCopiar');
+const btnCopy = document.querySelector('#btnCopiar')
 
 function btnCopiar() {
     let txt = mensaje.value
     navigator.clipboard.writeText(txt)
 }
 
-btnCopy.addEventListener('click', btnCopiar);
-
-
-
+btnCopy.addEventListener('click', btnCopiar)
