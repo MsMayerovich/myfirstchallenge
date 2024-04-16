@@ -70,6 +70,12 @@ const btnCopy = document.querySelector('#btnCopiar')
 function btnCopiar() {
     let txt = mensaje.value
     navigator.clipboard.writeText(txt)
+    Swal.fire({
+        title: "El texto fue copiado",
+        text: "COPIADO",
+        icon: "success"
+      });
 }
 
-btnCopy.addEventListener('click', btnCopiar)
+btnCopy.addEventListener('click', btnCopiar);
+
