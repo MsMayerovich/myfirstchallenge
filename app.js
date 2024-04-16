@@ -73,7 +73,8 @@ function btnCopiar() {
     Swal.fire({
         title: "El texto fue copiado",
         text: "COPIADO",
-        icon: "success"
+        icon: "success",
+        heightAuto: false
       });
 }
 
