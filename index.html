@@ -20,10 +20,10 @@
             
             <div class="advertencia">
                 <img class="iconoAlerta" src="img/exclamation-circle.png" alt="signoexclamación">
-                <p class="condición">Solo letras minúsculas y sin acentos</p>
+                <p class="bold condición">Solo letras minúsculas y sin acentos</p>
             </div>
 
-            <div class="botones">
+            <div class="flex botones">
                 <button id="encriptar" onclick="btnEncriptar()">Encriptar</button>
                 <button id="desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
             </div>
@@ -31,7 +31,7 @@
 
         <section class="flex salida noencontrado" id="noEncontrado">
             <img src="img/anime.jpg" alt="imagenanime" class="anime" id="anime">
-            <div class="mensajeNoEncontrado" id="mensajeNoEncontrado">
+            <div class="flex mensajeNoEncontrado" id="mensajeNoEncontrado">
                 <h2 class="bold" id="titulo-mensaje">Ningún mensaje fue encontrado.</h2>
                 <p class="parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
