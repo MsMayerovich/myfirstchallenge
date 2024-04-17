@@ -12,13 +12,24 @@ const textoNoEncontrado = document.querySelector(".noencontrado");
 
 function btnEncriptar() {
     const textoEncriptado = encriptar(textArea.value);
-    mensaje.value = textoEncriptado
-    textArea.value ="";
-    mensaje.style.backgroundImage = "none";
-    
-    textoEncontrado.classList.remove("display-none");
-    textoNoEncontrado.classList.add("display-none");
-    
+    if(textoEncriptado.trim() === ""){
+        Swal.fire({
+            title: "No existe texto",
+            text: "NO PUEDES ENCRIPTAR",
+            icon: "error",
+            heightAuto: false
+          });
+       
+    }else{
+        mensaje.value = textoEncriptado
+        textArea.value ="";
+        mensaje.style.backgroundImage = "none";
+        
+        textoEncontrado.classList.remove("display-none");
+        textoNoEncontrado.classList.add("display-none");
+
+    }
+       
 }
  
 
@@ -44,8 +55,22 @@ function encriptar(stringEncriptada){
 
 function btnDesencriptar() {
     const textoDesencriptado = desencriptar(textArea.value);
-    mensaje.value = textoDesencriptado
-    textArea.value ="";
+    if(textoDesencriptado.trim() === ""){
+        Swal.fire({
+            title: "No existe texto",
+            text: "NO PUEDES DESENCRIPTAR",
+            icon: "error",
+            heightAuto: false
+          });
+    }else{
+        mensaje.value = textoDesencriptado
+        textArea.value ="";
+
+        textoEncontrado.classList.remove("display-none");
+        textoNoEncontrado.classList.add("display-none");
+    }
+    
+    
 }
 
 
