@@ -202,9 +202,45 @@ body {
 
 }
 
-@media(min-width:834px){
+@media(max-width:834px){
+
+    .logo{
+        margin-top: 3em;
+    }
+
+    .contenedor{
+        justify-content: center;
+    }
    
     .principal{
         flex-direction: column;
     }
+
+    .flex.usuario{
+        margin-left: 2rem;
+    }
+
+    .text-area{
+        background-color: #FFCDD2;   
+
+    }
+
+    .advertencia{
+        margin-left: 10%;
+    }
+    
+
+    
+
+
+    
+    .botones{
+        flex-direction: column;
+        align-self: center;
+        justify-content:space-between ;
+        
+    }
+    
+
 }
+   
